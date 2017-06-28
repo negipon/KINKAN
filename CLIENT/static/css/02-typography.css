@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------------------
+ BASE STYLE
+ -------------------------------------------------------------------------------*/
+
+/* font-family */
+html, input, select, textarea, table, th, td, li ,a {
+	font-family: 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+/* font-style */
+html {
+	line-height: 1.7;
+	font-size: 12px;
+	-webkit-text-size-adjust: 100%;
+	border-color: #464646;
+}
+/* base font color */
+html, input, select, textarea {
+	color: #464646;
+}
+/* normalize size */
+input, select, textarea {
+	font-size: 100%;
+}
+/* normalize size & weight */
+h1, h2, h3, h4, h5, h6 {
+	/*font-size: 100%;*/
+	/*font-weight: normal;*/
+}
+/* normalize style & weight */
+strong, em, small {
+	font-style: normal;
+	font-weight: normal;
+}
+
+/*-------------------------------------------------------------------------------
+ ANCHORS STYLE
+ -------------------------------------------------------------------------------*/
+a { text-decoration: none; }
+a:link,
+a:visited	{ color: #3F51B5; }
+a:hover,
+a:active	{ color: #2196F3; }
+
+/*-------------------------------------------------------------------------------
+ WEB FONTS
+ -------------------------------------------------------------------------------*/
+
+ /* latin */
+ @font-face {
+	font-family: 'Ubuntu Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url(https://fonts.gstatic.com/s/ubuntucondensed/v7/DBCt-NXN57MTAFjitYxdrH4vxAoi6d67T_UKWi0EoHQ.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+ }

@@ -1,0 +1,34 @@
+{% extends "_layout.html" %}
+{% block content %}
+{% include "_header.html" %}
+<div class="container">
+	<div class="employee-table">
+		<form action="{{ url_for('idrec') }}" method="POST">
+			<table class="table-primary">
+				<tr>
+					<th>Staff ID</th>
+					<td><input type="text" name="id" class="input-text"></td>
+				</tr>
+				<tr>
+					<th>Card ID</th>
+					<td>
+						{% if card_id %}
+						<input type="text" name="card_id" value="{}" class="input-text">
+						{% else %}
+						<input type="text" name="card_id" class="input-text">
+						{% endif %}
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="ADD" class="btn-submit">
+		</form>
+		<form action="{{ url_for('enternew') }}" method="POST">
+			<div class="reading-card">
+				<h2>Reading Card ID</h2>
+				<input type="submit" value="Reading Card ID" class="btn">
+			</div>
+		</form>
+	</div>
+	{% include "_footer.html" %}
+</div>
+{% endblock %}

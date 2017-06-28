@@ -1,0 +1,18 @@
+{% extends "_layout.html" %}
+{% block content %}
+<header class="headar-content">
+	<h1 class="heading-primary">{{ title }}</h1>
+</header>
+<div class="container">
+	<div class="form-section">
+		{% if name %}
+		<h3 class="answer-heading">{{ name }}さんの {{ place }} {{ state }} を送信しました。<br>({{ time }})</h3>
+		{% else %}
+		<h3 class="answer-heading">送信できなかったかもしれません。。。</h3>
+		{% endif %}
+	</div>
+	<p class="undo">
+		<a href="{{ url_for('attendance') }}" class="undo-anchor"><i class="fa fa-undo" aria-hidden="true"></i></a>
+	</p>
+</div>
+{% endblock %}

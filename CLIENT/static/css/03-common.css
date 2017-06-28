@@ -1,0 +1,161 @@
+@charset "utf-8";
+* { box-sizing: border-box; }
+.headar-content {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #333;
+	padding: 2vw 6vw;
+	display: table;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+	color: #FFF;
+}
+.container {
+	padding: 11vw 2vw 2vw 2vw;
+	min-height: 100vh;
+	background-color: #DDD;
+}
+.heading-primary {
+	font-family: 'Ubuntu Condensed';
+	font-weight: bold;
+	text-align: center;
+	font-size: 5vw;
+	line-height: 1;
+	display: table-cell;
+	vertical-align: middle;
+}
+.btn {
+	color: #FFF;
+	font-family: 'Ubuntu Condensed';
+	padding: 5px 10px;
+	background-color: #B0BEC5;
+	border-width: 0 0 2px 0;
+	border-bottom: solid #909ea5;
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 2.5vw;
+	min-width: 20vw;
+	cursor: pointer;
+}
+.btn-submit {
+	display: block;
+	background-color: #FF9800;
+	color: #FFF;
+	border: none;
+	width: 100%;
+	padding: 10px;
+	font-size: 3vw;
+}
+.btn-submit.is-disabled {
+	background-color: #DDD;
+	overflow : hidden;
+	outline : none;
+}
+.table-primary {
+	width: 100%;
+}
+.table-primary th,
+.table-primary td {
+	padding: 1vw;
+	font-family: 'Ubuntu Condensed';
+	font-size: 3vw;
+}
+.table-primary td {
+	background-color: #FFF;
+	border-top: solid 2px #F5F5F5;
+	border-left: solid 1px #F5F5F5;
+	text-align: center;
+}
+.table-primary + .btn-submit {
+	margin-top: 20px;
+}
+.input-text {
+	border: none;
+	font-family: 'Ubuntu Condensed';
+	padding: 5px 10px;
+	font-size: 4vw;
+	width: 100%;
+}
+.toggle-checkbox {
+	visibility: hidden;
+	position: absolute;
+}
+.menu-toggle,
+.drawer-toggle {
+	width: 4vw;
+	height: 4vw;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 2vw;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: #CCC;
+	font-size: 4vw;
+	text-align: center;
+	line-height: 1;
+}
+.drawer-menu {
+	visibility: hidden;
+	position: fixed;
+	left: 100%;
+	top: 0;
+	bottom: 0;
+	background-color: #FFF;
+	z-index: 3;
+	transition: transform 0.3s ease-in-out;
+}
+.toggle-checkbox:checked + .headar-content {
+	overflow: visible;
+}
+.toggle-checkbox:checked + .headar-content > .drawer-menu {
+	visibility: visible;
+	transform: translateX(-100%);
+}
+.toggle-checkbox:checked + .headar-content > .menu-toggle {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	text-indent: -9999px;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	overflow: hidden;
+}
+.drawer-toggle-outer {
+	padding: 2vw;
+	height: 9vw;
+	position: relative;
+}
+.menu-list {
+	border-top: solid 1px #DDD;
+}
+.menu-list > li {
+	border-bottom: solid 1px #DDD;
+}
+.menu-list > li > a {
+	padding: 2vw 6vw;
+	display: block;
+	font-family: 'Ubuntu Condensed';
+	position: relative;
+	font-size: 3vw;
+	text-align: center;
+	white-space: nowrap;
+}
+.menu-list > li > a:before {
+	content: "";
+	width: 2vw;
+	height: 2vw;
+	position: absolute;
+	transform: rotate(45deg);
+	right: 2vw;
+	border-top: solid 2px #999;
+	border-right: solid 2px #999;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
+}

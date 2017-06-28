@@ -1,0 +1,45 @@
+{% extends "_layout.html" %}
+{% block content %}
+{% include "_header.html" %}
+<div class="container">
+	<p class="time-stamp jsc-time-stamp">{{ time }}</p>
+  <!-- Form
+  ================================================== -->
+	<form action="/answers/" method="POST" id="form1" class="form-contents">
+		<section class="form-section">
+			<h2 class="form-section-heading">拠点を選択して下さい</h2>
+			<ul class="form-select-list jsc-form-name-group">
+				{% for item in init.place %}<li class="radio place">
+					<input type="radio" name="place" id="place-{{ item.id }}" value="{{ item.id }}" class="radio-input" required>
+					<label for="place-{{ item.id }}" class="btn radio-label jsc-radio-label">{{ item.name }}</label>
+				</li>{% endfor %}
+			</ul>
+		</section>
+
+		<section class="form-section">
+			<h2 class="form-section-heading">勤怠を選択して下さい</h2>
+
+			<ul class="form-select-list jsc-form-name-group">
+				{% for item in init.state %}<li class="radio attendance">
+					<input type="radio" name="state" id="state-{{ item.id }}" value="{{ item.id }}" class="radio-input" required>
+					<label for="state-{{ item.id }}" class="btn radio-label jsc-radio-label">{{ item.name }}</label>
+				</li>{% endfor %}
+			</ul>
+		</section>
+		<div class="form-section">
+			<button type="submit" class="btn-submit is-disabled jsc-submit-button">
+				<i class="fa fa-paper-plane" aria-hidden="true"></i>
+			</button>
+		</div>
+	</form>
+	{% include "_footer.html" %}
+</div>
+<div class="modal jsc-modal">
+	<div class="loading">
+		<h3 class="loading-heading">Loading...</h3>
+		<p>IDカードをカードリーダーにタッチしてください。</p>
+		<p class="loading-icon"><i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i></p>
+	</div>
+</div>
+
+{% endblock %}

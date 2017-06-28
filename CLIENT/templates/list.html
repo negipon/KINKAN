@@ -1,0 +1,23 @@
+{% extends "_layout.html" %}
+{% block content %}
+{% include "_header.html" %}
+<div class="container">
+	<div class="employee-table">
+		<table class="table-primary">
+			<thead>
+				<th>Staff ID</th>
+				<th>Name</th>
+			</thead>
+
+			{% for row in rows %}
+			<tr>
+				<td>{{row["id"]}}</td>
+				<td>{{row["last_name"]}} {{row["first_name"]}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% include "_footer.html" %}
+	</div>
+</div>
+
+{% endblock %}
